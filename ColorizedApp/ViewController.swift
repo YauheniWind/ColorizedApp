@@ -42,7 +42,10 @@ class ViewController: UIViewController {
   
   
   private func changeColor() {
-    colorizedView.backgroundColor = UIColor(red: CGFloat(redSliderOutlet.value), green: CGFloat(greenSliderOutlet.value), blue: CGFloat(blueSliderOutlet.value), alpha: 1)
+    colorizedView.backgroundColor = UIColor(red: CGFloat(redSliderOutlet.value),
+                                            green: CGFloat(greenSliderOutlet.value),
+                                            blue: CGFloat(blueSliderOutlet.value),
+                                            alpha: 1)
   }
   
   private func changeCount(counter: UILabel, slider: UISlider) {
