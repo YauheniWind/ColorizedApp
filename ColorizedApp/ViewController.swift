@@ -11,40 +11,40 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var colorizedView: UIView!
   
-  @IBOutlet weak var redCounter: UILabel!
-  @IBOutlet weak var greenCounter: UILabel!
-  @IBOutlet weak var blueCounter: UILabel!
+  @IBOutlet weak var redCounterLabel: UILabel!
+  @IBOutlet weak var greenCounterLabel: UILabel!
+  @IBOutlet weak var blueCounterLabel: UILabel!
   
-  @IBOutlet weak var redSliderOutlet: UISlider!
-  @IBOutlet weak var greenSliderOutlet: UISlider!
-  @IBOutlet weak var blueSliderOutlet: UISlider!
+  @IBOutlet weak var redSlider: UISlider!
+  @IBOutlet weak var greenSlider: UISlider!
+  @IBOutlet weak var blueSlider: UISlider!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    changeColor()
     colorizedView.layer.cornerRadius = colorizedView.frame.width / 10
   }
 
-  @IBAction func redSlider(_ sender: UISlider) {
-    changeCount(counter: redCounter, slider: sender)
+  @IBAction func redSliderAction(_ sender: UISlider) {
+    changeCount(counter: redCounterLabel, slider: sender)
     changeColor()
   }
-  @IBAction func greenSlider(_ sender: UISlider) {
-    changeCount(counter: greenCounter, slider: sender)
+  @IBAction func greenSliderAction(_ sender: UISlider) {
+    changeCount(counter: greenCounterLabel, slider: sender)
     changeColor()
   }
   
-  @IBAction func blueSlider(_ sender: UISlider) {
-    changeCount(counter: blueCounter, slider: sender)
+  @IBAction func blueSliderAction(_ sender: UISlider) {
+    changeCount(counter: blueCounterLabel, slider: sender)
     changeColor()
   }
   
   
   private func changeColor() {
-    colorizedView.backgroundColor = UIColor(red: CGFloat(redSliderOutlet.value),
-                                            green: CGFloat(greenSliderOutlet.value),
-                                            blue: CGFloat(blueSliderOutlet.value),
+    colorizedView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                            green: CGFloat(greenSlider.value),
+                                            blue: CGFloat(blueSlider.value),
                                             alpha: 1)
   }
   
